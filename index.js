@@ -226,8 +226,22 @@ Use the getRandomFlavors function and new arrays below to do the following:
 */
 
 
-function getRandomFlavors(/*code here*/){
-    /*code here*/
+function getRandomFlavors(arr1, arr2, arr3, arr4){
+    const randomFlavors = [];
+    let randomArr;
+    for(let i = 0; i < 31; i++){
+        randomArr = Math.round(Math.random() * 3); // random number 0-3
+        if(randomArr === 0){
+            randomFlavors.push(originalFlavors[Math.floor(Math.random() * originalFlavors.length)]); // choose a random index of the selected array
+        } else if(randomArr === 1){
+            randomFlavors.push(newFlavors[Math.floor(Math.random() * newFlavors.length)]);
+        } else if(randomArr === 2) {
+            randomFlavors.push(seasonalFlavors[Math.floor(Math.random() * seasonalFlavors.length)]);
+        } else if(randomArr === 3){
+            randomFlavors.push(regionalFlavors[Math.floor(Math.random() * regionalFlavors.length)]);
+        }
+    }
+    return randomFlavors;
 }
 
 // NEW DATA ARRAYS FOR STRETCH 2 ⬇️
